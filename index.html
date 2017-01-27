@@ -18,6 +18,10 @@
 <link rel="stylesheet" href="css/style.css">
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"> </script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.17/vue.js"></script>
+<script src="https://unpkg.com/vue-resource@1.0.3/dist/vue-resource.min.js"></script>
+
 </head>
 <body>
 
@@ -70,91 +74,21 @@
 
 <section id="portfolio">
      <div class="container">
-          <div class="row">
+          <div class="row" id="old-list">
 
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img1.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Brand Identity</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img2.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Web Development</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img3.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Mobile App</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img4.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Logo Design</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img5.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Social marketing</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
-
-               <div class="col-md-4 col-sm-6">
-                    <a href="single-project.html">
-                         <div class="portfolio-thumb">
-                              <img src="images/portfolio-img6.jpg" class="img-responsive" alt="Portfolio">
-                                   <div class="portfolio-overlay">
-                                        <div class="portfolio-item">
-                                             <h3>Project Name</h3>
-                                             <small>Fyler Design</small>
-                                        </div>
-                                   </div>
-                         </div>
-                    </a>
-               </div>
+              <div class="col-md-4 col-sm-6" v-for="bible in old">
+                <a href="single-project.html">
+                  <div class="portfolio-thumb">
+                    <img src="images/portfolio-img1.jpg" class="img-responsive" alt="Portfolio">
+                    <div class="portfolio-overlay">
+                      <div class="portfolio-item">
+                        <h3> {{bible.name}}</h3>
+                        <small> {{bible.count}}</small>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
 
                <div class="col-md-12 col-sm-12 text-center">
                     <h3> Karai Kasang A Magam Bungli Hta Shang Lawm Ga.</h3>
@@ -207,6 +141,77 @@
 
 
 <!-- SCRIPTS -->
+
+<script>
+  new Vue ({
+    el : '#old-list',
+    data : {
+      "old" : [{
+        "name" : "Ningpawt Ningphang",
+        "count" : 50,
+        "url" : ""
+      }, {
+        "name" : "Pru Mat Wa",
+        "count" : 50,
+        "url" : ""
+      }, {
+        "name" : "Jaw Jau",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Bu Khawm",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Tara Japrang",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Yaw Shu",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Tara Agi",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Rutha",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Samuela 1",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Samuela 2",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Hkaw Hkam 1",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Hkaw Hkam 2",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Hkaw Hkam Labau 1",
+        "count" : 50,
+        "url" : ""
+      },{
+        "name" : "Hkaw Hkam Labau 2",
+        "count" : 50,
+        "url" : ""
+      }]
+    },
+    ready : function(){},
+    methods : {
+      ajax : function(url) {},
+      getchapter() {}
+    }
+  })
+
+</script>
 
 <script src="js/jquery.js"></script>
 <script src="js/bootstrap.min.js"></script>
